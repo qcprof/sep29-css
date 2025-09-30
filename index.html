@@ -1,358 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Basic Accounting Overview</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #e0e0e0;
-      background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
-      min-height: 100vh;
-      padding: 20px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    header {
-      text-align: center;
-      padding: 30px 0;
-      margin-bottom: 30px;
-      border-bottom: 2px solid #FF9800;
-      position: relative;
-    }
-
-    header::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 25%;
-      width: 50%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #FFD700, transparent);
-    }
-
-    h1 {
-      color: #FF9800;
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      text-shadow: 0 0 10px rgba(255, 152, 0, 0.3);
-    }
-
-    .subtitle {
-      color: #FFD700;
-      font-style: italic;
-      font-size: 1.2rem;
-    }
-
-    .content-section {
-      background: rgba(30, 30, 30, 0.8);
-      padding: 25px;
-      border-radius: 10px;
-      margin-bottom: 30px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-      border-left: 4px solid #FF9800;
-      transition: transform 0.3s ease;
-    }
-
-    .content-section:hover {
-      transform: translateY(-5px);
-    }
-
-    h2 {
-      color: #FF9800;
-      margin-bottom: 15px;
-      font-size: 1.8rem;
-      display: flex;
-      align-items: center;
-    }
-
-    h2::before {
-      content: '•';
-      color: #FFD700;
-      margin-right: 10px;
-      font-size: 2rem;
-    }
-
-    p {
-      margin-bottom: 15px;
-      font-size: 1.1rem;
-    }
-
-    .highlight {
-      color: #FFD700;
-      font-weight: bold;
-    }
-
-    .equation-box {
-      background: rgba(255, 152, 0, 0.1);
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-      margin: 20px 0;
-      border: 1px solid rgba(255, 152, 0, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .equation-box::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, #FF9800, #FFD700, #FF9800);
-    }
-
-    .equation {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #FFD700;
-      text-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
-    }
-
-    ul,
-    ol {
-      padding-left: 20px;
-      margin-bottom: 15px;
-    }
-
-    li {
-      margin-bottom: 10px;
-      padding: 8px;
-      background: rgba(255, 215, 0, 0.05);
-      border-radius: 5px;
-      border-left: 2px solid rgba(255, 215, 0, 0.3);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    caption {
-      caption-side: top;
-      font-weight: bold;
-      font-size: 1.3rem;
-      margin-bottom: 15px;
-      color: #FF9800;
-      text-align: left;
-    }
-
-    th {
-      background: linear-gradient(135deg, #FF9800, #FF8C00);
-      color: #121212;
-      padding: 15px;
-      text-align: left;
-      font-weight: bold;
-    }
-
-    td {
-      padding: 12px 15px;
-      border-bottom: 1px solid rgba(255, 215, 0, 0.1);
-    }
-
-    tr:nth-child(even) {
-      background: rgba(255, 152, 0, 0.05);
-    }
-
-    tr:hover {
-      background: rgba(255, 152, 0, 0.1);
-    }
-
-    .term-highlight {
-      color: #FFD700;
-      font-weight: bold;
-    }
-
-    hr {
-      border: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, #FF9800, #FFD700, #FF9800, transparent);
-      margin: 40px 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 30px;
-      color: #aaa;
-      font-size: 0.9rem;
-      border-top: 1px solid rgba(255, 152, 0, 0.3);
-    }
-
-    .glow {
-      text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        padding: 10px;
-      }
-
-      h1 {
-        font-size: 2.2rem;
-      }
-
-      .content-section {
-        padding: 15px;
-      }
-
-      .equation {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <h1>Basic Accounting Concepts</h1>
-      <p class="subtitle">Understanding the Language of Business</p>
-    </header>
 
-    <section class="content-section">
-      <p>
-        Accounting is the <span class="highlight">language of business</span>. It involves recording, classifying,
-        summarizing, and interpreting
-        financial transactions. This page provides a very basic overview of core accounting elements.
-      </p>
-    </section>
+  <h1>Basic Accounting Concepts</h1>
 
-    <section class="content-section">
-      <h2>The Accounting Equation</h2>
-      <p>
-        The foundation of double-entry accounting is the <span class="highlight">Accounting Equation</span>, which must
-        always remain in balance.
-      </p>
+  <p>
+    Accounting is the **language of business**. It involves recording, classifying, summarizing, and interpreting
+    financial transactions. This page provides a very basic overview of core accounting elements.
+  </p>
 
-      <div class="equation-box">
-        <p class="equation">Assets = Liabilities + Equity</p>
-      </div>
+  <h2>The Accounting Equation</h2>
+  <p>
+    The foundation of double-entry accounting is the **Accounting Equation**, which must always remain in balance.
+  </p>
 
-      <ul>
-        <li><span class="term-highlight">Assets:</span> Resources owned by a business (e.g., Cash, Accounts Receivable,
-          Equipment).</li>
-        <li><span class="term-highlight">Liabilities:</span> Obligations of a business to outside parties (e.g.,
-          Accounts Payable, Loans Payable).</li>
-        <li><span class="term-highlight">Equity (Owner's/Stockholder's):</span> The owner's residual claim on the assets
-          after deducting liabilities.</li>
-      </ul>
-    </section>
+  <p>
+    **Assets = Liabilities + Equity**
+  </p>
 
-    <hr>
+  <ul>
+    <li>**Assets:** Resources owned by a business (e.g., Cash, Accounts Receivable, Equipment).</li>
+    <li>**Liabilities:** Obligations of a business to outside parties (e.g., Accounts Payable, Loans Payable).</li>
+    <li>**Equity (Owner's/Stockholder's):** The owner's residual claim on the assets after deducting liabilities.</li>
+  </ul>
 
-    <section class="content-section">
-      <h2>Common Account Types</h2>
-      <p>
-        Financial transactions are recorded into different accounts. These accounts are often classified into five main
-        types:
-      </p>
+  ---
 
-      <ol>
-        <li><span class="term-highlight">Assets</span></li>
-        <li><span class="term-highlight">Liabilities</span></li>
-        <li><span class="term-highlight">Equity</span></li>
-        <li><span class="term-highlight">Revenue</span> (Increases Equity)</li>
-        <li><span class="term-highlight">Expenses</span> (Decreases Equity)</li>
-      </ol>
-    </section>
+  <h2>Common Account Types</h2>
 
-    <hr>
+  <p>
+    Financial transactions are recorded into different accounts. These accounts are often classified into five main
+    types:
+  </p>
 
-    <section class="content-section">
-      <h2>Example Balance Sheet Elements</h2>
-      <p>
-        The Balance Sheet is a snapshot of a company's assets, liabilities, and equity at a specific point in time.
-        Below
-        are examples of accounts that might appear.
-      </p>
+  <ol>
+    <li>Assets</li>
+    <li>Liabilities</li>
+    <li>Equity</li>
+    <li>Revenue (Increases Equity)</li>
+    <li>Expenses (Decreases Equity)</li>
+  </ol>
 
-      <table>
-        <caption>Balance Sheet Accounts</caption>
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>Example Accounts</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="term-highlight">Assets</span></td>
-            <td>Cash, Accounts Receivable, Inventory, Equipment</td>
-          </tr>
-          <tr>
-            <td><span class="term-highlight">Liabilities</span></td>
-            <td>Accounts Payable, Salaries Payable, Notes Payable</td>
-          </tr>
-          <tr>
-            <td><span class="term-highlight">Equity</span></td>
-            <td>Owner's Capital (or Common Stock, Retained Earnings)</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+  ---
 
-    <hr>
+  <h2>Example Balance Sheet Elements</h2>
 
-    <section class="content-section">
-      <h2>Key Accounting Terms</h2>
+  <p>
+    The Balance Sheet is a snapshot of a company's assets, liabilities, and equity at a specific point in time. Below
+    are examples of accounts that might appear.
+  </p>
 
-      <table>
-        <caption>Basic Terminology</caption>
-        <thead>
-          <tr>
-            <th>Term</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="term-highlight">Debit (Dr)</span></td>
-            <td>The left side of any T-account; increases Assets and Expenses, decreases Liabilities, Equity, and
-              Revenue.</td>
-          </tr>
-          <tr>
-            <td><span class="term-highlight">Credit (Cr)</span></td>
-            <td>The right side of any T-account; decreases Assets and Expenses, increases Liabilities, Equity, and
-              Revenue.</td>
-          </tr>
-          <tr>
-            <td><span class="term-highlight">Revenue</span></td>
-            <td>Income earned from the normal activities of a business.</td>
-          </tr>
-          <tr>
-            <td><span class="term-highlight">Expense</span></td>
-            <td>The cost incurred in the process of generating revenue.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+  <table border="1">
+    <caption>Balance Sheet Accounts</caption>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Example Accounts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>**Assets**</td>
+        <td>Cash, Accounts Receivable, Inventory, Equipment</td>
+      </tr>
+      <tr>
+        <td>**Liabilities**</td>
+        <td>Accounts Payable, Salaries Payable, Notes Payable</td>
+      </tr>
+      <tr>
+        <td>**Equity**</td>
+        <td>Owner's Capital (or Common Stock, Retained Earnings)</td>
+      </tr>
+    </tbody>
+  </table>
 
-    <footer>
-      <p>
-        This is a simplified view. Real-world accounting systems involve much more detail and many regulations.
-      </p>
-    </footer>
-  </div>
+  ---
+
+  <h2>Key Accounting Terms</h2>
+
+  <table border="1">
+    <caption>Basic Terminology</caption>
+    <thead>
+      <tr>
+        <th>Term</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>**Debit** (Dr)</td>
+        <td>The left side of any T-account; increases Assets and Expenses, decreases Liabilities, Equity, and Revenue.
+        </td>
+      </tr>
+      <tr>
+        <td>**Credit** (Cr)</td>
+        <td>The right side of any T-account; decreases Assets and Expenses, increases Liabilities, Equity, and Revenue.
+        </td>
+      </tr>
+      <tr>
+        <td>**Revenue**</td>
+        <td>Income earned from the normal activities of a business.</td>
+      </tr>
+      <tr>
+        <td>**Expense**</td>
+        <td>The cost incurred in the process of generating revenue.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    This is a simplified view. Real-world accounting systems involve much more detail and many regulations.
+  </p>
+
 </body>
 
 </html>
